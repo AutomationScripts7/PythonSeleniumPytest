@@ -1,0 +1,13 @@
+
+JSON NOTES:
+
+1.if multiple data in single list item in JSON dictionary, then only we can use parametrize fixture to iterate and
+    use execute multiple times based on given data.
+
+2.we can directly access JSON file if not multiple data set in single list.
+
+
+
+Summary:
+Scenario                             - Single data	- Direct access: data["key"]
+Multiple data (run test N times)	 - @pytest.mark.parametrize

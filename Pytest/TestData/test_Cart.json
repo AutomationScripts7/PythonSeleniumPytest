@@ -1,0 +1,17 @@
+{
+  "promocodes": [
+    {
+      "DiscountPromoCode": "rahulshettyacademy",
+      "textboxSearch": "ber"
+
+    },
+    {
+      "DiscountPromoCode": "InvalidCode",
+      "textboxSearch": "ber"
+
+    }
+  ]
+}
+
+
+

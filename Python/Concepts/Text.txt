@@ -1,0 +1,6 @@
+Pytest
+BDD
+CD
+CI
+Automation World
+Python

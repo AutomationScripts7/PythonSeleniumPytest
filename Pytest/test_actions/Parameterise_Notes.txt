@@ -1,0 +1,65 @@
+
+
+Parameterise can be done my 3 ways:
+1. Parametrize - Directly parameterise in code by hard coded
+2.Fixture Data Driven - Data inside fixture and reusuable across testcases
+3.JSON Data Driven - Data in external JSON file, large & maintainable datasets and easy to update without code changes
+
+Note:
+Note:
+1. We use params (params=["data"]) in @pytest.fixture inside conftest.py instead of using @pytest.mark.parametrize in the test file.(params means parametrize)
+2. This makes the data reusable across multiple test files.
+3. Use @pytest.mark.parametrize directly in the test file when the multiple test data execution (from JSON or hard-coded) is specific to that particular test case only.
+
+
+# -------------------------------------------------
+1. PARAMETRIZE - Hard coded directly in test file
+# -------------------------------------------------
+
+@pytest.mark.parametrize("browser", ["Chrome", "Edge"])
+@pytest.mark.parametrize("login_data", [{"username": "admin", "password": "pass123"}])
+class TestHardCoded():
+    def test_login(self, browser, login_data):
+        print(browser, login_data["username"])
+
+# -------------------------------------------------
+2. FIXTURE DATA DRIVEN - Reusable across tests
+# -------------------------------------------------
+
+# conftest.py
+@pytest.fixture(params=[{"username": "admin", "password": "pass123"}, {"username": "user1", "password": "pass456"}])
+def login_data(request):
+    return request.param
+
+# test file
+class TestFixtureDriven():
+    def test_login(self, login_data):
+        print(login_data["username"], login_data["password"])
+
+
+# -------------------------------------------------
+# 3. JSON DATA DRIVEN - External file, maintainable
+# -------------------------------------------------
+
+# testdata.json → [{"username": "admin", "password": "pass123"}]
+
+# conftest.py
+import json
+@pytest.fixture(params=json.load(open("testdata.json")))
+def login_data(request):
+    return request.param
+
+# test file
+class TestJsonDriven():
+    def test_login(self, login_data):
+        print(login_data["username"], login_data["password"])
+
+
+# -------------------------------------------------
+
+
+# KEY DIFFERENCES:
+# 1. parametrize  → data in test file, quick & simple
+# 2. fixture      → data in conftest, reusable across files
+# 3. json         → data in .json file, easy to update without code changes
+

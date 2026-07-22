@@ -38,6 +38,8 @@ action.send_keys("a")
 action.key_up(Keys.CONTROL)             #key_up means release that key
 action.perform()
 
+
+
 #Perform delete all
 action.key_down(Keys.CONTROL)
 action.send_keys("a")       # select all

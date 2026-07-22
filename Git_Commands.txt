@@ -1,0 +1,74 @@
+#Code Commit into git
+
+git pull
+git status
+git add .
+git commit -m "message"
+git push
+
+#Checkout Branch
+git branch
+git checkout
+#-----------------------------------------
+
+
+## Daily Workflow
+
+### 1. Pull
+
+git pull
+
+**Meaning:** Latest code-ah GitHub-lendhu download pannu.
+
+---
+
+### 2. Status
+
+git status
+
+**Meaning:** Enna files change aagiruku nu check pannu.
+---
+
+### 3. Add
+
+git add .
+
+**Meaning:** Ella changed files-ah commit-ku ready pannu.
+
+---
+
+### 4. Commit
+git commit -m "message"
+
+**Meaning:** Changes-ah save pannu.
+
+**Example:**
+git commit -m "Added Login Automation"
+
+---
+### 5. Push
+
+git push
+
+**Meaning:** Saved changes-ah GitHub-ku upload pannu.
+
+---
+# Branch Commands
+
+### View Branches
+
+git branch
+
+**Meaning:** Branch list-ah kaatu.
+
+---
+### Switch Branch
+
+git checkout <branch-name>
+
+**Meaning:** Vera branch-ku switch aagu.
+
+**Example:**
+git checkout develop
+
+

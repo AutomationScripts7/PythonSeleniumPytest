@@ -1,3 +1,9 @@
+NOTES:
+
+GitHub is a website.
+Git is the tool that provides the commands.
+
+
 #Code Commit into git
 
 git pull
